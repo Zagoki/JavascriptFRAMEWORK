@@ -1,23 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, Input } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 
-import { RecipeCardComponent } from './recipe-card.component';
-
-describe('RecipeCardComponent', () => {
-  let component: RecipeCardComponent;
-  let fixture: ComponentFixture<RecipeCardComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [RecipeCardComponent]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(RecipeCardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+@Component({
+  selector: 'app-recipe-card',
+  standalone: true,
+  imports: [MatCardModule],
+  template: `
+    <mat-card class="recipe-card">
+      <img mat-card-image [src]="recipe.strMealThumb" [alt]="recipe.strMeal" />
+      <mat-card-title>{{ recipe.strMeal }}</mat-card-title>
+    </mat-card>
+  `,
+  styleUrl: './recipe-card.component.scss'
+})
+export class RecipeCardComponent {
+  @Input() recipe: any;
+}

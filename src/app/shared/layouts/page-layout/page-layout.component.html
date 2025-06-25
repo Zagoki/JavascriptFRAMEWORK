@@ -1,7 +1,10 @@
 <mat-toolbar color="primary">
-  CookingBuddy
- 
+  <span>CookingBuddy</span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/home">Accueil</a>
+  <a mat-button routerLink="/register">Inscription</a>
+  <!-- Ajoute d'autres liens ici -->
 </mat-toolbar>
-<main class="main-container">   <!-- ng-content dans un main centré et paddé -->
+<main class="main-container">
   <ng-content></ng-content>
 </main>

@@ -1,4 +1,9 @@
-<app-page-layout>
-  <h1>Bienvenue sur CookingBuddy !</h1>
-  <!-- Ajoute ici le contenu spécifique à la page d'accueil -->
-</app-page-layout>
+  <app-recipe-categories
+    [categories]="recipesService.categories()"
+    [selectedCategory]="selectedCategory()"
+    (categorySelected)="onCategorySelected($event)">
+  </app-recipe-categories>
+
+  <app-recipe-category
+    [category]="selectedCategory()">
+  </app-recipe-category>

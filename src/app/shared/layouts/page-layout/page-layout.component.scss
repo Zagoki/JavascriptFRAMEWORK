@@ -1,5 +1,9 @@
-.main-container {  //Styles pour le container central
+.main-container { 
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }

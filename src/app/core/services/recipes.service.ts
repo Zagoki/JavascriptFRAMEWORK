@@ -1,4 +1,4 @@
-import { Injectable, signal, effect, computed } from '@angular/core';
+import { Injectable, signal, computed } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +19,6 @@ export class RecipesService {
     computed(async () => {
       const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
       const data = await res.json();
-      return data.meals;  
-  
+      return data.meals;
     });
 }
