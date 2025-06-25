@@ -24,5 +24,12 @@ export const routes: Routes = [
         (m) => m.RecipePageComponent
       ),
   },
+  {
+    path: 'favorites',
+    loadComponent: () =>
+      import('./features/recipes/favorites-page/favorites-page.component').then(
+        (m) => m.FavoritesPageComponent
+      ),
+  },
   { path: '**', redirectTo: '' },
 ];
