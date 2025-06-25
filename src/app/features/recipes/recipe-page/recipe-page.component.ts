@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { RecipesService } from '../../../core/services/recipes.service';
 import { AsyncPipe, NgIf, NgFor } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { YTHoverPlayDirective } from '../../../shared/directives/yt-hover-play-directive';
 
 @Component({
   selector: 'app-recipe-page',
   standalone: true,
-  imports: [AsyncPipe, NgIf, NgFor, MatCardModule],
+  imports: [AsyncPipe, NgIf, NgFor, MatCardModule, YTHoverPlayDirective],
   template: `
     <ng-container *ngIf="recipe() as recipe">
       <mat-card>
@@ -31,7 +32,8 @@ import { MatCardModule } from '@angular/material/card';
             <iframe width="560" height="315"
               [src]="youtubeEmbedUrl(recipe.strYoutube)"
               frameborder="0"
-              allowfullscreen>
+              allowfullscreen
+              appYTHoverPlay>
             </iframe>
           </div>
           <h3>Instructions</h3>
@@ -72,6 +74,6 @@ export class RecipePageComponent {
 
   youtubeEmbedUrl(url: string): string {
     const id = url.split('v=')[1];
-    return id ? `https://www.youtube.com/embed/${id}` : '';
+    return id ? `https://www.youtube.com/embed/${id}?enablejsapi=1` : '';
   }
 }
