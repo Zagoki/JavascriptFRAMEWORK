@@ -17,5 +17,12 @@ export const routes: Routes = [
         (m) => m.RegisterPageComponent
       ),
   },
+  {
+    path: 'recipe/:id',
+    loadComponent: () =>
+      import('./features/recipes/recipe-page/recipe-page.component').then(
+        (m) => m.RecipePageComponent
+      ),
+  },
   { path: '**', redirectTo: '' },
 ];

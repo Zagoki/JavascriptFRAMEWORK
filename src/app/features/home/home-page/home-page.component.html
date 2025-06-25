@@ -1,3 +1,13 @@
+<input
+  matInput
+  placeholder="Rechercher une recette..."
+  [(ngModel)]="searchTerm"
+  (ngModelChange)="onSearchChange($event)"
+  style="margin-bottom: 1rem; width: 100%; max-width: 400px;"
+/>
+
+<!-- Affichage conditionnel -->
+<ng-container *ngIf="!searchTerm">
   <app-recipe-categories
     [categories]="recipesService.categories()"
     [selectedCategory]="selectedCategory()"
@@ -7,3 +17,18 @@
   <app-recipe-category
     [category]="selectedCategory()">
   </app-recipe-category>
+</ng-container>
+
+<ng-container *ngIf="searchTerm">
+  <ng-container *ngIf="searchResults() as results">
+    <ng-container *ngIf="results.length; else noResults">
+      <app-detailed-recipe-card
+        *ngFor="let recipe of results"
+        [recipe]="recipe">
+      </app-detailed-recipe-card>
+    </ng-container>
+    <ng-template #noResults>
+      <p>Aucun résultat trouvé.</p>
+    </ng-template>
+  </ng-container>
+</ng-container>
