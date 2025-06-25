@@ -5,8 +5,8 @@ import { PageLayoutComponent } from './shared/layouts/page-layout/page-layout.co
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 // Make sure the path is correct and the directive is standalone
-import { YTHoverPlayDirective } from '../shared/directives/yt-hover-play.directive';
-import { DietDetectorPipe } from '../../../shared/pipes/diet-detector.pipe';
+import { YTHoverPlayDirective } from './shared/directives/yt-hover-play.directive';
+import { DietDetectorPipe } from './shared/pipes/diet-detector.pipe';
 
 
 @Component({

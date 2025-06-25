@@ -35,6 +35,7 @@ Accédez à [http://localhost:4200](http://localhost:4200).
 - Angular 19+
 - Angular Material
 - TheMealDB API
+- package @angular/localize
 
 ## Auteurs
 

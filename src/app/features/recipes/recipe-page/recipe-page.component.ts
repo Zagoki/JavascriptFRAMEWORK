@@ -1,14 +1,15 @@
 import { Component, inject, signal, effect } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RecipesService } from '../../../core/services/recipes.service';
-import { AsyncPipe, NgIf, NgFor } from '@angular/common';
+import { AsyncPipe, NgIf, NgFor, CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { YTHoverPlayDirective } from '../../../shared/directives/yt-hover-play-directive';
+import { DietDetectorPipe } from '../../../shared/pipes/diet-detector.pipe';
 
 @Component({
   selector: 'app-recipe-page',
   standalone: true,
-  imports: [AsyncPipe, NgIf, NgFor, MatCardModule, YTHoverPlayDirective],
+  imports: [AsyncPipe, NgIf, NgFor, MatCardModule, YTHoverPlayDirective, CommonModule, DietDetectorPipe],
   template: `
     <ng-container *ngIf="recipe() as recipe">
       <mat-card>

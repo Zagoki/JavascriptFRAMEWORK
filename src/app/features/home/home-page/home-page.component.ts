@@ -4,11 +4,13 @@ import { RecipeCategoryComponent } from '../../recipes/recipe-category/recipe-ca
 import { RecipeCategoriesComponent } from '../../recipes/recipe-categories/recipe-categories.component';
 import { DetailedRecipeCardComponent } from '../../recipes/detailed-recipe-card/detailed-recipe-card.component'; // à créer
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
   imports: [
+    CommonModule,
     RecipeCategoryComponent,
     RecipeCategoriesComponent,
     DetailedRecipeCardComponent,

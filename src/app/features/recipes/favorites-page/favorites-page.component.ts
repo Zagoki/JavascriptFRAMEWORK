@@ -3,11 +3,12 @@ import { FavoritesService } from '../../../core/services/favorites.service';
 import { RecipesService } from '../../../core/services/recipes.service';
 import { DetailedRecipeCardComponent } from '../detailed-recipe-card/detailed-recipe-card.component';
 import { NgFor, AsyncPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-favorites-page',
   standalone: true,
-  imports: [NgFor, AsyncPipe, DetailedRecipeCardComponent],
+  imports: [CommonModule, NgFor, AsyncPipe, DetailedRecipeCardComponent],
   template: `
     <h2>Mes recettes favorites</h2>
     <ng-container *ngIf="recipes() as favs">
