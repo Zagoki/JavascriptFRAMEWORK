@@ -39,4 +39,4 @@ Accédez à [http://localhost:4200](http://localhost:4200).
 
 ## Auteurs
 
-- Projet réalisé dans le cadre d’un exercice EPSI
+- Projet réalisé dans le cadre d’un exercice EPSI - mattheo c

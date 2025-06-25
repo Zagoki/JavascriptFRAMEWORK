@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { YTHoverPlayDirective } from '../../../shared/directives/yt-hover-play-directive';
 import { DietDetectorPipe } from '../../../shared/pipes/diet-detector.pipe';
 
-@Component({
+@Component({ 
   selector: 'app-recipe-page',
   standalone: true,
   imports: [AsyncPipe, NgIf, NgFor, MatCardModule, YTHoverPlayDirective, CommonModule, DietDetectorPipe],
