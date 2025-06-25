@@ -17,6 +17,11 @@ import { YTHoverPlayDirective } from '../../../shared/directives/yt-hover-play-d
           <mat-card-subtitle>
             Catégorie : {{ recipe.strCategory }} | Origine : {{ recipe.strArea }}
             <a *ngIf="recipe.strSource" [href]="recipe.strSource" target="_blank" style="margin-left:1rem;">Source</a>
+            <span style="margin-left:1rem;">
+              <span class="diet-badge">
+                {{ recipe | dietDetector }}
+              </span>
+            </span>
           </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
